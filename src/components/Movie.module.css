@@ -1,0 +1,32 @@
+.movie {
+  flex-basis: 450px;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+  border: 4px solid #2c8aaa;
+  border-radius: 40px;
+  padding: 20px;
+  background-color: #b1dee9;
+}
+
+.cover__img {
+  display: block;
+  margin: auto;
+  border: 7px solid white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: all 0.2s linear;
+}
+.cover__img:hover {
+  transform: scale(1.1);
+}
+
+.title {
+  text-align: center;
+}
+
+.title > a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  font-weight: 700;
+}

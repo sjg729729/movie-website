@@ -1,0 +1,16 @@
+.header {
+  text-align: center;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-self: center;
+}
+
+.movies {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
