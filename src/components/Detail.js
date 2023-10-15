@@ -11,7 +11,7 @@ function Detail() {
     );
     const json = await response.json();
     setMovie(json.data.movie);
-    console.log(movie);
+    console.log(id);
   }
 
   useEffect(() => {
@@ -25,9 +25,10 @@ function Detail() {
       <p>{movie.rating}</p>
       <p>{movie.runtime}</p>
       <p>
-        {movie.genres.map((item, value) => (
-          <span key={value}>{item} </span>
-        ))}
+        {movie.genres &&
+          movie.genres.map((item, value) => {
+            return <span key={value}>{item} </span>;
+          })}
       </p>
       <img src={movie.large_cover_image} alt={movie.title}></img>
     </div>
