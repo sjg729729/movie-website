@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  height: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+
+  background-color: rgb(108, 215, 203);
+}
+
+.img__detail {
+  align-self: center;
+  flex-basis: 500px;
+}
+
+.detail {
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  width: 50px;
+  height: 30px;
+  align-self: end;
+
+  border: none;
+  background-color: rgb(255, 176, 111);
+  border-radius: 15px;
+}
+.btn:hover {
+  background-color: rgb(186, 128, 80);
+}
+
+.btn > a {
+  text-decoration: none;
+  color: black;
+}

@@ -1,11 +1,19 @@
 .header {
   text-align: center;
+  margin-top: 0;
+  padding: 20px 0px;
+  background-color: #2c8aaa;
+  border-bottom: 2px solid skyblue;
 }
 
 .container {
   height: 100%;
   display: flex;
-  justify-self: center;
+  /* justify-self: center; */
+}
+
+.loading {
+  margin: auto;
 }
 
 .movies {

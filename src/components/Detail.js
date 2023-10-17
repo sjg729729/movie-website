@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import styles from "./Detail.module.css";
+import { symbol } from "prop-types";
 
 function Detail() {
   const { id } = useParams();
@@ -11,7 +13,7 @@ function Detail() {
     );
     const json = await response.json();
     setMovie(json.data.movie);
-    console.log(id);
+    console.log(movie.summary);
   }
 
   useEffect(() => {
@@ -19,18 +21,29 @@ function Detail() {
   }, []);
 
   return (
-    <div>
-      <h1>{movie.title}</h1>
-      <p>{movie.year}</p>
-      <p>{movie.rating}</p>
-      <p>{movie.runtime}</p>
-      <p>
-        {movie.genres &&
-          movie.genres.map((item, value) => {
-            return <span key={value}>{item} </span>;
-          })}
-      </p>
-      <img src={movie.large_cover_image} alt={movie.title}></img>
+    <div className={styles.container}>
+      <div className={styles.img__detail}>
+        <img src={movie.large_cover_image} alt={movie.title}></img>
+      </div>
+      <div className={`${styles.img__detail} ${styles.detail}`}>
+        <h1>{movie.title}</h1>
+        <p>Release {movie.year}</p>
+        <p>⭐️ {movie.rating}</p>
+        <p>{movie.runtime} min</p>
+        <p>
+          Genres :
+          {movie.genres &&
+            movie.genres.map((item, value) => {
+              return <span key={value}> {item} </span>;
+            })}
+        </p>
+        <p>{movie.description_full}</p>
+        <button className={styles.btn}>
+          <a href={movie.url} target="_blank">
+            More
+          </a>
+        </button>
+      </div>
     </div>
   );
 }
